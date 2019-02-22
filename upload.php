@@ -3,17 +3,7 @@ echo '';
 function generateRandomString($length = 16) {
     return substr(str_shuffle(str_repeat($x='0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ', ceil($length/strlen($x)) )),1,$length);
 }
-
 $rand = generateRandomString();
-
-
-
-
-
-
-
-
-
 $target_dir = "uploads/";
 $target_file = $target_dir .$rand . '/' . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -44,13 +34,8 @@ if ($uploadOk != 0) {
 }
 if ($uploadOk != 0) {
 	echo '
-	<style> 
-body {
-    background-image: url("/data/background.jpg");
-    background-color: #cccccc;
-    
-}
-</style>
+<style>body {background-image: url("/data/background.jpg");
+             background-color: #cccccc;}</style>
 <h2>Thank you for using Python2exe.com</h2>
 
 	<a href="'."uploads/". $rand . '/' .$testexe.'">'.$testexe.'</a>';
